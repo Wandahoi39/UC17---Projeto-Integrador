@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* PALETA DE CORES ESTILO COZY PIXEL ART */
+:root {
+    --ac-bg: #26422b;          /* Fundo verde floresta rústico */
+    --ac-sidebar: #132618;     /* Barra lateral bem escura */
+    --ac-sidebar-hover: #1f3621;
+    --ac-panel: #f7f4d5;       /* Fundo dos cartões (pergaminho/bege pixelado) */
+    --ac-panel-border: #4a3319;/* Borda marrom forte de pixel art */
+    --ac-text-dark: #2c2215;   /* Texto escuro rústico */
+    --ac-text-light: #f7f4d5;  /* Texto claro */
+    --ac-accent: #5a7d55;      /* Tom verde suave */
+    --ac-gold: #c29b38;        /* Destaque amarelado */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    image-rendering: pixelated;
+}
+
+body {
+    background-image: url('fundopixel.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--ac-text-dark);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    line-height: 2.2;
+    padding: 20px;
+}
+
+/* LAYOUT PRINCIPAL EM GRID (Sidebar + Painel de Conteúdo) */
+.ac-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 20px;
+}
+
+@media(max-width: 900px) {
+    .ac-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* BARRA LATERAL (SIDEBAR) ESTILO RETRÔ */
+.ac-sidebar {
+    background-color: var(--ac-sidebar);
+    color: var(--ac-text-light);
+    border: 4px solid var(--ac-panel-border);
+    box-shadow: 6px 6px 0px #050d07;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: fit-content;
+}
+
+.island-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed var(--ac-accent);
+}
+
+.island-icon {
+    font-size: 24px;
+}
+
+.island-brand h2 {
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.island-brand p {
+    font-size: 8px;
+    color: var(--ac-accent);
+}
+
+/* NAVEGAÇÃO DA SIDEBAR */
+.ac-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-btn {
+    background: var(--ac-sidebar-hover);
+    border: 3px solid var(--ac-accent);
+    color: var(--ac-text-light);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    text-align: left;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 3px 3px 0px #050d07;
+    transition: none;
+}
+
+.nav-btn:hover {
+    border-color: var(--ac-gold);
+}
+
+.nav-btn.active {
+    background-color: var(--ac-panel);
+    color: var(--ac-text-dark);
+    border-color: var(--ac-gold);
+    box-shadow: none;
+    transform: translate(2px, 2px);
+}
+
+/* CARD DA GUARDIÃ NA SIDEBAR */
+.ac-mayor-card {
+    background-color: #1b3520;
+    border: 3px solid var(--ac-accent);
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.mayor-avatar {
+    font-size: 24px;
+    background: var(--ac-sidebar);
+    padding: 6px;
+    border: 2px solid var(--ac-accent);
+}
+
+.mayor-info h4 {
+    font-size: 9px;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.mayor-info p, .mayor-info small {
+    font-size: 8px;
+    color: var(--bege-claro, #d4c5a9);
+    line-height: 1.5;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.ac-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* TOPO ESTILO HUD RETRÔ */
+.ac-topbar {
+    background-color: var(--ac-panel);
+    border: 4px solid var(--ac-panel-border);
+    box-shadow: 6px 6px 0px #050d07;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.welcome-box h1 {
+    font-size: 14px;
+    color: var(--ac-sidebar);
+    margin-bottom: 6px;
+}
+
+.welcome-box p {
+    font-size: 9px;
+    color: #5a4f3c;
+}
+
+.island-stats {
+    display: flex;
+    gap: 10px;
+    background-color: #e6dfcb;
+    border: 2px solid var(--ac-panel-border);
+    padding: 8px 12px;
+    font-size: 8px;
+    font-weight: bold;
+    color: #3a3225;
+}
+
+/* PAINÉIS DE CONTEÚDO PIXEL ART */
+.ac-panel {
+    background-color: var(--ac-panel);
+    border: 4px solid var(--ac-panel-border);
+    box-shadow: 6px 6px 0px #050d07;
+    padding: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 3px dashed var(--ac-panel-border);
+    padding-bottom: 12px;
+}
+
+.panel-header h3 {
+    font-size: 13px;
+    color: var(--ac-sidebar);
+}
+
+.panel-tag {
+    background-color: #d4cbb3;
+    color: #3a3225;
+    font-size: 8px;
+    padding: 4px 8px;
+    border: 2px solid var(--ac-panel-border);
+}
+
+.hero-block {
+    background-color: #eae3cc;
+    border: 3px solid var(--ac-panel-border);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 10px;
+    color: var(--ac-text-dark);
+    text-align: center;
+    line-height: 2;
+}
+
+/* BUSCA RÁPIDA */
+.search-box {
+    background-color: #eae3cc;
+    border: 3px solid var(--ac-panel-border);
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-box label {
+    display: block;
+    font-size: 9px;
+    margin-bottom: 10px;
+    color: var(--ac-sidebar);
+}
+
+.search-box input {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    color: var(--ac-text-dark);
+    border: 3px solid var(--ac-panel-border);
+    outline: none;
+    text-align: center;
+}
+
+.search-result-text {
+    font-size: 9px;
+    margin-top: 10px;
+    color: #132618;
+}
+
+/* CARDS INTERNOS */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+@media(min-width: 650px) {
+    .cards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.ac-inner-card {
+    background-color: #ffffff;
+    border: 3px solid var(--ac-panel-border);
+    padding: 15px;
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+}
+
+.ac-inner-card.warning {
+    border-color: #8c3f3f;
+    background-color: #fce8e8;
+}
+
+.ac-inner-card h4 {
+    font-size: 10px;
+    color: var(--ac-sidebar);
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.ac-inner-card ul {
+    list-style-type: square;
+    padding-left: 18px;
+    font-size: 9px;
+}
+
+.ac-inner-card li {
+    margin-bottom: 6px;
+}
+
+/* MINI-JOGO & GUIA DE LIXEIRAS */
+.bins-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.bin-guide-item {
+    background-color: #ffffff;
+    border: 2px solid var(--ac-panel-border);
+    border-left: 6px solid #ccc;
+    padding: 10px;
+    font-size: 8px;
+    line-height: 1.6;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #eae3cc;
+    border: 3px solid var(--ac-panel-border);
+    padding: 15px;
+}
+
+@media(min-width: 650px) {
+    .game-container {
+        flex-direction: row;
+    }
+}
+
+.items-pool, .bins-pool {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.draggable-item {
+    background-color: #ffffff;
+    border: 3px solid var(--ac-panel-border);
+    padding: 10px;
+    text-align: center;
+    cursor: grab;
+    font-size: 9px;
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+    touch-action: none;
+}
+
+.drop-bin {
+    background-color: #ffffff;
+    border: 3px dashed var(--ac-panel-border);
+    padding: 10px;
+    text-align: center;
+    min-height: 60px;
+}
+
+.bin-azul { border-color: #4a90e2; background-color: #eaf2fb; }
+.bin-vermelha { border-color: #e24a4a; background-color: #fbeaea; }
+.bin-verde { border-color: #4ae270; background-color: #eafbf0; }
+.bin-amarela { border-color: #e2d14a; background-color: #fbf8ea; }
+.bin-marrom { border-color: #a06b35; background-color: #f3ece4; }
+
+.drop-bin h4 {
+    font-size: 9px;
+    color: var(--ac-text-dark);
+}
+
+.bin-status {
+    font-size: 8px;
+    color: #665;
+}
+
+.game-feedback-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 9px;
+    color: #132618;
+}
+
+/* ECOPONTOS */
+.filter-controls {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    padding: 8px 10px;
+    background-color: #eae3cc;
+    color: var(--ac-text-dark);
+    border: 2px solid var(--ac-panel-border);
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background-color: var(--ac-sidebar);
+    color: #fff;
+    border-color: var(--ac-panel-border);
+}
+
+.ecopontos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+@media(min-width: 650px) {
+    .ecopontos-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.ecoponto-card {
+    background-color: #ffffff;
+    border: 3px solid var(--ac-panel-border);
+    padding: 12px;
+}
+
+.ecoponto-card h4 {
+    font-size: 9px;
+    color: var(--ac-sidebar);
+    margin-bottom: 6px;
+}
+
+.ecoponto-card p {
+    font-size: 8px;
+    line-height: 1.6;
+    color: #554;
+}
+
+/* RODAPÉ */
+.ac-footer {
+    text-align: center;
+    font-size: 8px;
+    color: #d4cbb3;
+    margin-top: 15px;
+    padding-bottom: 10px;
+}
