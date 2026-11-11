@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Aplicação web educativa sobre descarte de resíduos e proteção ambiental em Natal/RN.">
-    <title>em andamento</title>
+    <title>TerraNova - Natal/RN</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="ac-layout">
+    <div class="eco-layout">
         
-        <!-- BARRA LATERAL-->
-        <aside class="ac-sidebar">
-            <div class="island-brand">
-                <span class="island-icon">🍃</span>
+        <!-- BARRA LATERAL -->
+        <aside class="eco-sidebar">
+            <div class="eco-brand">
+                <span class="eco-icon">🍃</span>
                 <div>
-                    <h2>vamo ver ai o nome</h2>
-                    <p>...</p>
+                    <h2>TerraNova</h2>
+                    <p>Natal / RN</p>
                 </div>
             </div>
 
-            <nav class="ac-nav" aria-label="Navegação principal">
+            <nav class="eco-nav" aria-label="Navegação principal">
                 <button class="nav-btn active" id="btn-organicos" aria-controls="secao-organicos">
                     <span>🌱</span> Organicidade
                 </button>
@@ -36,30 +36,30 @@
                 </button>
             </nav>
 
-            <!-- Card do Personagem / Mascote na Sidebar -->
-            <div class="ac-mayor-card">
-                <div class="mayor-avatar">🌿</div>
-                <div class="mayor-info">
-                    <h4>Guardiã da Ilha</h4>
-                    <p>Dicas do Dia:</p>
-                    <small>Pratique a compostagem e proteja os rios de Natal contra o lixo!</small>
+            <!-- Card da Mascote na Sidebar -->
+            <div class="eco-mascot-card">
+                <img src="mascote.png" alt="Guardiã Ambiental" class="mascot-avatar">
+                <div class="mascot-info">
+                    <h4>Guardiã Flora</h4>
+                    <p><strong>Dica do Dia:</strong></p>
+                    <small id="dica-texto">Pratique a compostagem e proteja os rios de Natal contra o lixo!</small>
                 </div>
             </div>
         </aside>
 
-        
-        <main class="ac-main-content">
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="eco-main">
             
-            <!-- TOPO / CABEÇALHO DA ILHA -->
-            <header class="ac-topbar">
-                <div class="welcome-box">
-                    <h1>oi</h1>
-                    <p>vou alterar essas coisas tudo</p>
+            <!-- TOPO / CABEÇALHO -->
+            <header class="eco-header">
+                <div class="header-box">
+                    <h1>TerraNova Natal</h1>
+                    <p>Painel de Sustentabilidade & Coleta Seletiva 🌿</p>
                 </div>
             </header>
 
             <!-- SEÇÃO 1: RESÍDUOS ORGÂNICOS -->
-            <section id="secao-organicos" class="ac-panel" tabIndex="0">
+            <section id="secao-organicos" class="eco-panel" tabIndex="0">
                 <div class="panel-header">
                     <h3>Cultivo & Compostagem na Terra</h3>
                     <span class="panel-tag">ODS 15</span>
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="cards-grid">
-                    <article class="ac-inner-card">
+                    <article class="eco-card">
                         <h4>O que PODE ir para a terra:</h4>
                         <ul>
                             <li>Cascas de frutas e legumes</li>
@@ -89,7 +89,7 @@
                         </ul>
                     </article>
 
-                    <article class="ac-inner-card warning">
+                    <article class="eco-card warning">
                         <h4>O que NÃO vai na composteira:</h4>
                         <ul>
                             <li>Carnes, gorduras e laticínios (atraem pragas)</li>
@@ -101,7 +101,7 @@
             </section>
 
             <!-- SEÇÃO 2: PLÁSTICOS E INORGÂNICOS -->
-            <section id="secao-inorganicos" class="ac-panel hidden" tabIndex="0">
+            <section id="secao-inorganicos" class="eco-panel hidden" tabIndex="0">
                 <div class="panel-header">
                     <h3>Plásticos & Proteção dos Rios</h3>
                     <span class="panel-tag">ODS 12</span>
@@ -114,7 +114,7 @@
                 </div>
 
                 <div class="cards-grid">
-                    <article class="ac-inner-card">
+                    <article class="eco-card">
                         <h4>O que vai para a Reciclagem:</h4>
                         <ul>
                             <li>Garrafas PET e frascos limpos</li>
@@ -124,7 +124,7 @@
                         </ul>
                     </article>
 
-                    <article class="ac-inner-card warning">
+                    <article class="eco-card warning">
                         <h4>Os Vilões dos Bueiros:</h4>
                         <ul>
                             <li>Copos descartáveis e canudos plásticos</li>
@@ -136,57 +136,81 @@
             </section>
 
             <!-- SEÇÃO 3: MINI-JOGO DA COLETA SELETIVA -->
-            <section id="secao-jogo" class="ac-panel hidden" tabIndex="0">
+            <section id="secao-jogo" class="eco-panel hidden" tabIndex="0">
                 <div class="panel-header">
-                    <h3>Jogo: Coleta Seletiva na Ilha</h3>
+                    <h3>Jogo: Coleta Seletiva na Cidade</h3>
                     <span class="panel-tag">Desafio</span>
                 </div>
                 
                 <div class="hero-block">
-                    <p class="intro-text">Arraste cada item (ou clique nele) para a lixeira da cor correta da coleta seletiva!</p>
+                    <p class="intro-text">Arraste os resíduos da trilha para a lixeira correspondente ou toque em um item para descartá-lo!</p>
                 </div>
 
-                <!-- Explicações das lixeiras -->
+                <!-- Explicações rápidas das cores -->
                 <div class="bins-guide-grid">
-                    <div class="bin-guide-item" style="border-color: #4a90e2;"><strong>Azul:</strong> Papel e Papelão</div>
-                    <div class="bin-guide-item" style="border-color: #e24a4a;"><strong>Vermelha:</strong> Plásticos</div>
-                    <div class="bin-guide-item" style="border-color: #4ae270;"><strong>Verde:</strong> Vidros</div>
-                    <div class="bin-guide-item" style="border-color: #e2d14a;"><strong>Amarela:</strong> Metais</div>
-                    <div class="bin-guide-item" style="border-color: #a06b35;"><strong>Marrom:</strong> Orgânicos</div>
+                    <div class="bin-guide-item" style="border-left-color: #4a90e2;"><strong>Azul:</strong> Papel</div>
+                    <div class="bin-guide-item" style="border-left-color: #e24a4a;"><strong>Vermelha:</strong> Plástico</div>
+                    <div class="bin-guide-item" style="border-left-color: #4ae270;"><strong>Verde:</strong> Vidro</div>
+                    <div class="bin-guide-item" style="border-left-color: #e2d14a;"><strong>Amarela:</strong> Metal</div>
+                    <div class="bin-guide-item" style="border-left-color: #a06b35;"><strong>Marrom:</strong> Orgânico</div>
                 </div>
 
                 <div class="game-container">
-                    <!-- Itens para descartar -->
-                    <div class="items-pool">
-                        <p><strong>Itens na trilha:</strong></p>
-                        <div class="draggable-item" draggable="true" id="item-pet" data-tipo="plastico" tabIndex="0">Garrafa PET</div>
-                        <div class="draggable-item" draggable="true" id="item-casca" data-tipo="organico" tabIndex="0">Casca de Banana</div>
-                        <div class="draggable-item" draggable="true" id="item-lata" data-tipo="metal" tabIndex="0">Lata de Alumínio</div>
-                        <div class="draggable-item" draggable="true" id="item-jornal" data-tipo="papel" tabIndex="0">Jornal Velho</div>
-                        <div class="draggable-item" draggable="true" id="item-garrafa" data-tipo="vidro" tabIndex="0">Garrafa de Vidro</div>
+                    <!-- 1. LIXEIRAS ENFILEIRADAS NO TOPO -->
+                    <div class="bins-pool">
+                        <div class="drop-bin" data-aceita="papel" tabIndex="0" role="region" aria-label="Lixeira Azul de Papel">
+                            <img src="lixeira-azul.jpeg" alt="Lixeira Azul" class="bin-image">
+                            <span>Papel</span>
+                        </div>
+                        <div class="drop-bin" data-aceita="plastico" tabIndex="0" role="region" aria-label="Lixeira Vermelha de Plástico">
+                            <img src="lixeira-vermelha.jpeg" alt="Lixeira Vermelha" class="bin-image">
+                            <span>Plástico</span>
+                        </div>
+                        <div class="drop-bin" data-aceita="vidro" tabIndex="0" role="region" aria-label="Lixeira Verde de Vidro">
+                            <img src="lixeira-verde.jpeg" alt="Lixeira Verde" class="bin-image">
+                            <span>Vidro</span>
+                        </div>
+                        <div class="drop-bin" data-aceita="metal" tabIndex="0" role="region" aria-label="Lixeira Amarela de Metal">
+                            <img src="lixeira-amarela.jpeg" alt="Lixeira Amarela" class="bin-image">
+                            <span>Metal</span>
+                        </div>
+                        <div class="drop-bin" data-aceita="organico" tabIndex="0" role="region" aria-label="Lixeira Marrom Orgânica">
+                            <img src="lixeira-marrom.jpeg" alt="Lixeira Marrom" class="bin-image">
+                            <span>Orgânico</span>
+                        </div>
                     </div>
 
-                    <!-- Lixeiras -->
-                    <div class="bins-pool">
-                        <div class="drop-bin bin-azul" data-aceita="papel" tabIndex="0" role="region" aria-label="Lixeira Azul de Papel">
-                            <h4>Papel</h4>
-                            <p class="bin-status">Solte aqui</p>
+                    <!-- DIVISÓRIA RÚSTICA -->
+                    <div class="game-divider">~ ~ ~ ~ ~ resíduos na trilha ~ ~ ~ ~ ~</div>
+
+                    <!-- 2. ITENS ESPALHADOS EM EMBAIXO -->
+                    <div class="items-pool">
+                        <div class="draggable-item" draggable="true" id="item-1" data-tipo="especial" tabIndex="0">
+                            <img src="lampada.jpeg" alt="Lâmpada" class="game-icon"> Lâmpada
                         </div>
-                        <div class="drop-bin bin-vermelha" data-aceita="plastico" tabIndex="0" role="region" aria-label="Lixeira Vermelha de Plástico">
-                            <h4>Plástico</h4>
-                            <p class="bin-status">Solte aqui</p>
+                        <div class="draggable-item" draggable="true" id="item-2" data-tipo="especial" tabIndex="0">
+                            <img src="pilha.jpeg" alt="Pilha" class="game-icon"> Pilha
                         </div>
-                        <div class="drop-bin bin-verde" data-aceita="vidro" tabIndex="0" role="region" aria-label="Lixeira Verde de Vidro">
-                            <h4>Vidro</h4>
-                            <p class="bin-status">Solte aqui</p>
+                        <div class="draggable-item" draggable="true" id="item-3" data-tipo="especial" tabIndex="0">
+                            <img src="lampada2.jpeg" alt="Lâmpada" class="game-icon"> Lâmpada
                         </div>
-                        <div class="drop-bin bin-amarela" data-aceita="metal" tabIndex="0" role="region" aria-label="Lixeira Amarela de Metal">
-                            <h4>Metal</h4>
-                            <p class="bin-status">Solte aqui</p>
+                        <div class="draggable-item" draggable="true" id="item-4" data-tipo="plastico" tabIndex="0">
+                            <img src="sacola.jpeg" alt="Sacola plástica" class="game-icon"> Sacola
                         </div>
-                        <div class="drop-bin bin-marrom" data-aceita="organico" tabIndex="0" role="region" aria-label="Lixeira Marrom Orgânica">
-                            <h4>Orgânico</h4>
-                            <p class="bin-status">Solte aqui</p>
+                        <div class="draggable-item" draggable="true" id="item-5" data-tipo="vidro" tabIndex="0">
+                            <img src="garrafavidro1.jpeg" alt="Garrafa de vidro" class="game-icon"> Vidro
+                        </div>
+                        <div class="draggable-item" draggable="true" id="item-6" data-tipo="especial" tabIndex="0">
+                            <img src="pilhafina.jpeg" alt="Pilha" class="game-icon"> Pilha
+                        </div>
+                        <div class="draggable-item" draggable="true" id="item-7" data-tipo="papel" tabIndex="0">
+                            <img src="jornal.jpeg" alt="Jornal velho" class="game-icon"> Jornal
+                        </div>
+                        <div class="draggable-item" draggable="true" id="item-8" data-tipo="organico" tabIndex="0">
+                            <img src="banana.jpeg" alt="Casca de banana" class="game-icon"> Banana
+                        </div>
+                        <div class="draggable-item" draggable="true" id="item-9" data-tipo="papel" tabIndex="0">
+                            <img src="papelão.jpeg" alt="Caixa" class="game-icon"> Caixa
                         </div>
                     </div>
                 </div>
@@ -194,7 +218,7 @@
             </section>
 
             <!-- SEÇÃO 4: ECOPONTOS DE NATAL -->
-            <section id="secao-ecopontos" class="ac-panel hidden" tabIndex="0">
+            <section id="secao-ecopontos" class="eco-panel hidden" tabIndex="0">
                 <div class="panel-header">
                     <h3>Ecopontos e Coleta em Natal/RN</h3>
                     <span class="panel-tag">Guia Local</span>
@@ -216,7 +240,7 @@
                 </div>
             </section>
 
-            <footer class="ac-footer">
+            <footer class="eco-footer">
                 <p>✦ Projeto Escolar (SENAC) • Natal / RN ✦</p>
             </footer>
         </main>
