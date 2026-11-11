@@ -25,10 +25,10 @@ body {
     font-size: 10px;
     line-height: 2;
     padding: 10px;
-    background-image: url('img\\fundopixel.png'); /* Imagem de fundo */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-    background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem */
+    background-image: url('./img/fundopixel.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .eco-layout {
