@@ -25,10 +25,10 @@ body {
     font-size: 10px;
     line-height: 2;
     padding: 10px;
-    background-image: url('img\\fundopixel.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-image: url('img\\fundopixel.png'); /* Imagem de fundo */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
 }
 
 .eco-layout {
@@ -90,15 +90,8 @@ body {
     font-size: 20px;
 }
 
-.eco-brand h2 { 
-    font-size: 11px; 
-    color: #fff; 
-}
-
-.eco-brand p { 
-    font-size: 7px; 
-    color: var(--eco-accent);
-}
+.eco-brand h2 { font-size: 11px; color: #fff; }
+.eco-brand p { font-size: 7px; color: var(--eco-accent); }
 
 .eco-nav {
     display: flex;
@@ -145,17 +138,8 @@ body {
     background-color: var(--eco-sidebar);
 }
 
-.mascot-info h4 { 
-    font-size: 8px; 
-    color: #fff; 
-    margin-bottom: 2px; 
-}
-
-.mascot-info p, .mascot-info small { 
-    font-size: 7px; 
-    color: #d4c5a9; 
-    line-height: 1.4; 
-}
+.mascot-info h4 { font-size: 8px; color: #fff; margin-bottom: 2px; }
+.mascot-info p, .mascot-info small { font-size: 7px; color: #d4c5a9; line-height: 1.4; }
 
 /* CONTEÚDO PRINCIPAL */
 .eco-main {
@@ -171,16 +155,8 @@ body {
     padding: 15px;
 }
 
-.header-box h1 { 
-    font-size: 11px; 
-    color: var(--eco-sidebar);
-    margin-bottom: 4px; 
-}
-
-.header-box p { 
-    font-size: 8px; 
-    color: #5a4f3c; 
-}
+.header-box h1 { font-size: 11px; color: var(--eco-sidebar); margin-bottom: 4px; }
+.header-box p { font-size: 8px; color: #5a4f3c; }
 
 .eco-panel {
     background-color: var(--eco-panel);
@@ -189,9 +165,7 @@ body {
     padding: 15px;
 }
 
-.hidden { 
-    display: none; 
-}
+.hidden { display: none; }
 
 .panel-header {
     display: flex;
@@ -202,10 +176,7 @@ body {
     padding-bottom: 8px;
 }
 
-.panel-header h3 { 
-    font-size: 11px; 
-    color: var(--eco-sidebar); 
-}
+.panel-header h3 { font-size: 11px; color: var(--eco-sidebar); }
 
 .panel-tag {
     background-color: #d4cbb3;
@@ -269,25 +240,10 @@ body {
     padding: 12px;
 }
 
-.eco-card.warning { 
-    border-color: #8c3f3f; 
-    background-color: #fce8e8; 
-}
-
-.eco-card h4 { 
-    font-size: 9px; 
-    color: var(--eco-sidebar); 
-    margin-bottom: 8px; }
-
-.eco-card ul { 
-    list-style-type: square; 
-    padding-left: 15px; 
-    font-size: 8px; 
-}
-
-.eco-card li { 
-    margin-bottom: 6px; 
-}
+.eco-card.warning { border-color: #8c3f3f; background-color: #fce8e8; }
+.eco-card h4 { font-size: 9px; color: var(--eco-sidebar); margin-bottom: 8px; }
+.eco-card ul { list-style-type: square; padding-left: 15px; font-size: 8px; }
+.eco-card li { margin-bottom: 6px; }
 
 /* ESTRUTURA DO JOGO REORGANIZADA (LIXEIRAS NO TOPO, ITENS EMBAIXO) */
 .game-container {
