@@ -1,4 +1,4 @@
-// --- 1. GERENCIAMENTO DE NAVEGAÇÃO DE ABAS ---
+// --- 1. GERENCIAMENTO DE ABAS ---
 const buttons = {
     organicos: document.getElementById('btn-organicos'),
     inorganicos: document.getElementById('btn-inorganicos'),
@@ -31,7 +31,27 @@ buttons.jogo.addEventListener('click', () => alternarAba('jogo'));
 buttons.ecopontos.addEventListener('click', () => alternarAba('ecopontos'));
 
 
-// --- 2. BUSCA RÁPIDA DE ITENS ORGÂNICOS ---
+// --- 2. SISTEMA DE DICAS DINÂMICAS DA MASCOTE ---
+const dicas = [
+    "Pratique a compostagem e proteja os rios de Natal contra o lixo!",
+    "Lâmpadas e pilhas nunca devem ir para a lixeira comum!",
+    "O lixo descartado incorretamente entope bueiros durante as chuvas.",
+    "Lave as garrafas PET antes de enviar para a reciclagem!",
+    "Folhas secas e cascas de ovo trituradas enriquecem a terra."
+];
+
+const elementoDica = document.getElementById('dica-texto');
+let dicaIndex = 0;
+
+setInterval(() => {
+    dicaIndex = (dicaIndex + 1) % dicas.length;
+    if (elementoDica) {
+        elementoDica.innerText = dicas[dicaIndex];
+    }
+}, 6000); // Muda a cada 6 segundos
+
+
+// --- 3. BUSCA RÁPIDA DE ORGÂNICOS ---
 const inputBuscaOrg = document.getElementById('search-input-org');
 const resultBuscaOrg = document.getElementById('search-result-org');
 
@@ -70,7 +90,7 @@ if(inputBuscaOrg) {
 }
 
 
-// --- 3. LÓGICA DO MINI-JOGO DRAG AND DROP ---
+// --- 4. LÓGICA DO MINI-JOGO (MOUSE + TOQUE/CLIQUE CELULAR) ---
 const draggables = document.querySelectorAll('.draggable-item');
 const dropBins = document.querySelectorAll('.drop-bin');
 const gameFeedback = document.getElementById('game-feedback');
@@ -82,11 +102,27 @@ draggables.forEach(item => {
         draggedElement = item;
         e.dataTransfer.setData('text/plain', item.dataset.tipo);
     });
+
+    // Clique direto no celular
+    item.addEventListener('click', () => {
+        const tipo = item.dataset.tipo;
+        if (tipo === "especial") {
+            gameFeedback.innerText = "⚠️ Lâmpadas e pilhas vão nos Ecopontos Especiais!";
+            return;
+        }
+        
+        const binAlvo = document.querySelector(`.drop-bin[data-aceita="${tipo}"]`);
+        if (binAlvo) {
+            binAlvo.appendChild(item);
+            item.setAttribute('draggable', 'false');
+            gameFeedback.innerText = `✨ ${item.innerText.trim()} descartado na lixeira correta!`;
+        }
+    });
 });
 
 dropBins.forEach(bin => {
     bin.addEventListener('dragover', (e) => {
-        e.preventDefault(); // Necessário para permitir o drop
+        e.preventDefault();
     });
 
     bin.addEventListener('drop', (e) => {
@@ -94,10 +130,14 @@ dropBins.forEach(bin => {
         const tipoItem = e.dataTransfer.getData('text/plain');
         const aceitaTipo = bin.dataset.aceita;
 
+        if (tipoItem === "especial") {
+            gameFeedback.innerText = "⚠️ Lâmpadas e pilhas vão nos Ecopontos Especiais de Natal!";
+            return;
+        }
+
         if (tipoItem === aceitaTipo) {
             bin.appendChild(draggedElement);
-            draggedElement.setAttribute('draggable', 'false'); // Trava o item na lixeira
-            draggedElement.style.cursor = 'default';
+            draggedElement.setAttribute('draggable', 'false');
             gameFeedback.innerText = "✨ Boa! Descarte correto realizado com sucesso!";
         } else {
             gameFeedback.innerText = "❌ Ops! Essa lixeira não é a correta para este item.";
@@ -106,7 +146,7 @@ dropBins.forEach(bin => {
 });
 
 
-// --- 4. LISTA E FILTRO DOS ECOPONTOS DE NATAL ---
+// --- 5. LISTA E FILTRO DOS ECOPONTOS DE NATAL ---
 const dadosEcopontos = [
     {
         nome: "Ecoponto do Baldo",
@@ -164,5 +204,4 @@ filterBtns.forEach(btn => {
     });
 });
 
-// Renderização inicial
 renderizarEcopontos('todos');
