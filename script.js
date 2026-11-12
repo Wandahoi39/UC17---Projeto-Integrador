@@ -204,4 +204,25 @@ filterBtns.forEach(btn => {
     });
 });
 
+// --- LÓGICA DO BOTÃO DE REINICIAR O JOGO ---
+const btnReiniciar = document.getElementById('btn-reiniciar-jogo');
+const itemsPoolOriginal = document.querySelector('.items-pool');
+
+// Guardamos os elementos originais ou fazemos o reset dinâmico
+if (btnReiniciar) {
+    btnReiniciar.addEventListener('click', () => {
+        const todosItens = document.querySelectorAll('.draggable-item');
+        
+        todosItens.forEach(item => {
+            itemsPoolOriginal.appendChild(item);
+            
+            item.setAttribute('draggable', 'true');
+        });
+
+        if (gameFeedback) {
+            gameFeedback.innerText = "🔄 Jogo reiniciado! Arraste os itens novamente.";
+        }
+    });
+}
+
 renderizarEcopontos('todos');
