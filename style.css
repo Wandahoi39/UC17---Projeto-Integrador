@@ -251,6 +251,25 @@ body {
     padding: 15px;
 }
 
+.reiniciar-btn {
+    display: inline-block;
+    width: auto !important;
+    max-width: 200px;
+    margin: 10px auto;
+    background-color: #5a7d55;
+    color: #f7f4d5;
+    border: 2px solid #4a3319;
+    padding: 8px 12px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 7px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px #050d07;
+}
+
+#btn-reiniciar-jogo:hover {
+    background-color: #4a6845;
+}
+
 /* LIXEIRAS ENFILEIRADAS NO TOPO (SEM BORDA PESADA INDIVIDUAL) */
 .bins-pool {
     display: grid;
