@@ -25,7 +25,7 @@ body {
     font-size: 10px;
     line-height: 2;
     padding: 10px;
-    background-image: url('./img/fundopixel.png');
+    background-image: url('img\\fundopixel.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -142,30 +142,26 @@ body {
 .mascot-info p, .mascot-info small { font-size: 7px; color: #d4c5a9; line-height: 1.4; }
 
 /* CONTEÚDO PRINCIPAL */
-.eco-main {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.eco-header {
+.eco-panel, .eco-header {
     background-color: var(--eco-panel);
     border: 4px solid var(--eco-panel-border);
     box-shadow: 4px 4px 0px #050d07;
     padding: 15px;
+    display: block;
 }
 
 .header-box h1 { font-size: 11px; color: var(--eco-sidebar); margin-bottom: 4px; }
 .header-box p { font-size: 8px; color: #5a4f3c; }
 
 .eco-panel {
-    background-color: var(--eco-panel);
-    border: 4px solid var(--eco-panel-border);
-    box-shadow: 4px 4px 0px #050d07;
-    padding: 15px;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.15s ease-in-out;
 }
 
-.hidden { display: none; }
+.eco-panel.hidden {
+    display: none !important;
+}
 
 .panel-header {
     display: flex;
@@ -264,31 +260,33 @@ body {
 }
 
 .drop-bin {
-    background: transparent !important;
-    border: none !important;
-    padding: 4px;
+    background-color: #ffffff;
+    border: 3px dashed var(--eco-panel-border);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 4px;
+    min-height: 85px;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+    transition: background-color 0.15s ease;
 }
 
 .drop-bin:last-child {
-    border-right: none; /* Remove a linha da última lixeira */
+    border-right: none;
 }
 
 .bin-image {
     width: 44px;
     height: 44px;
     object-fit: contain;
-    transition: transform 0.1s ease;
+    background: transparent;
+    mix-blend-mode: multiply;
 }
 
-.drop-bin:hover .bin-image {
-    transform: scale(1.1); /* Efeito suave ao passar o mouse */
+.drop-bin:hover {
+    background-color: #f7f4d5; 
 }
-
 .drop-bin span {
     font-size: 7px;
     font-weight: bold;
@@ -305,7 +303,7 @@ body {
 /* ITENS DISPOSTOS EM GRADE EMBAIXO */
 .items-pool {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); /* Grade fluida de itens */
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
     gap: 8px;
     width: 100%;
 }
@@ -419,4 +417,8 @@ body {
     text-align: center; 
     font-size: 7px; color: #d4cbb3; 
     margin-top: 10px; 
+}
+
+.eco-panel {
+    min-height: 450px; 
 }
