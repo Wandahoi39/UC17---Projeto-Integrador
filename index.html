@@ -157,7 +157,7 @@
                 </div>
 
                 <div class="game-container">
-                    <!-- LIXEIRAS -->
+                    <!-- 1. LIXEIRAS ENFILEIRADAS NO TOPO -->
                     <div class="bins-pool">
                         <div class="drop-bin" data-aceita="papel" tabIndex="0" role="region" aria-label="Lixeira Azul de Papel">
                             <img src="img\lixeira-azul.png" alt="Lixeira Azul" class="bin-image">
@@ -181,7 +181,7 @@
                         </div>
                     </div>
 
-                    <!-- DIVISÓRIA -->
+                    <!-- DIVISÓRIA RÚSTICA -->
                     <div class="game-divider">~ ~ ~ ~ ~ resíduos na trilha ~ ~ ~ ~ ~</div>
 
                     <!-- 2. ITENS ESPALHADOS EM EMBAIXO -->
@@ -214,6 +214,9 @@
                             <img src="img\papelão.jpeg" alt="Caixa" class="game-icon"> Caixa
                         </div>
                     </div>
+                    <button id="btn-reiniciar-jogo" class="reiniciar-btn" aria-label="Reiniciar o jogo da coleta seletiva">
+                            🔄 Reiniciar Jogo
+                    </button>
                 </div>
                 <p id="game-feedback" class="game-feedback-text" aria-live="polite"></p>
             </section>
@@ -237,7 +240,7 @@
                 </div>
 
                 <div id="lista-ecopontos" class="ecopontos-grid" aria-live="polite">
-                    <!-- tá no js -->
+                    <!-- Inserido dinamicamente via JS -->
                 </div>
             </section>
 
@@ -248,8 +251,10 @@
     </div>
 
     <script src="script.js"></script>
+    
+    <script src="https://accessibilitywidget.io/widget.min.js" data-account="auto" defer></script>
 
-        <!-- VLibras -->
+    <!-- VLibras -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
@@ -260,6 +265,6 @@
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
-    <!-- está no script no html pq não tava funcionando fora, não consegui -->
+
 </body>
 </html>
